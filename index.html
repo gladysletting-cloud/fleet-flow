@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FleetFlow | Truck Allocation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <h2>FleetFlow</h2>
+      <p class="sidebar-subtitle">Truck Operations</p>
+
+      <nav>
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#orders">Customer Orders</a>
+        <a href="#inventory">Truck Inventory</a>
+        <a href="#allocation">Truck Allocation</a>
+        <a href="#deliveries">Delivery Schedule</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        Allocation & Delivery Management
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <h1 id="dashboard">Operations Dashboard</h1>
+          <p>Monitor truck allocation and delivery performance.</p>
+        </div>
+        <span class="user-label">Operations Team</span>
+      </header>
+
+      <section class="summary-cards">
+        <article class="summary-card">
+          <p>Total Orders</p>
+          <h2 id="total-orders">0</h2>
+        </article>
+
+        <article class="summary-card">
+          <p>Awaiting Allocation</p>
+          <h2 id="pending-orders">0</h2>
+        </article>
+
+        <article class="summary-card">
+          <p>Deliveries Due Soon</p>
+          <h2 id="due-orders">0</h2>
+        </article>
+
+        <article class="summary-card">
+          <p>Overdue Deliveries</p>
+          <h2 id="overdue-orders">0</h2>
+        </article>
+      </section>
+
+      <section class="panel" id="orders">
+        <div class="section-heading">
+          <div>
+            <h2>Customer Orders</h2>
+            <p>Review truck orders and their delivery progress.</p>
+          </div>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search customer or order..."
+          >
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Order No.</th>
+                <th>Customer</th>
+                <th>Truck</th>
+                <th>Source</th>
+                <th>Delivery Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="orders-table">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="deliveries">
+        <h2>Delivery Monitoring</h2>
+        <p>Keep track of scheduled and completed deliveries.</p>
+        <div id="delivery-list"></div>
+      </section>
+
+      <section class="panel" id="inventory">
+        <h2>Truck Availability</h2>
+        <p>Monitor stock trucks and trucks being sourced or imported.</p>
+        <div id="inventory-summary"></div>
+      </section>
+
+      <footer>
+        FleetFlow &copy; 2026 | Internal Operations System
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fa;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 245px;
+  background: #12263a;
+  color: white;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  color: #f5b942;
+  font-size: 27px;
+}
+
+.sidebar-subtitle {
+  color: #a9b9ca;
+  font-size: 13px;
+  margin: 4px 0 35px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar nav a {
+  color: #d8e1eb;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #29435d;
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 30px;
+  color: #a9b9ca;
+  font-size: 12px;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.topbar h1 {
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.topbar p,
+.panel > p,
+.section-heading p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.user-label {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.summary-card,
+.panel {
+  background: white;
+  border: 1px solid #e7edf4;
+  border-radius: 11px;
+  padding: 22px;
+  box-shadow: 0 3px 12px #12263a08;
+}
+
+.summary-card p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.summary-card h2 {
+  font-size: 32px;
+  margin-top: 12px;
+  color: #173b5e;
+}
+
+.panel {
+  margin-bottom: 25px;
+}
+
+.panel h2 {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+#search-input {
+  padding: 11px 13px;
+  border: 1px solid #d8e1eb;
+  border-radius: 7px;
+  font-size: 14px;
+  width: min(100%, 270px);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #edf1f5;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+th {
+  color: #64748b;
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff0cb;
+  color: #8a5b00;
+}
+
+.status.allocated {
+  background: #dceafe;
+  color: #1d4ed8;
+}
+
+.status.transit {
+  background: #e9e0ff;
+  color: #6d28d9;
+}
+
+.status.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.delivery-item,
+.inventory-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.delivery-item:last-child,
+.inventory-item:last-child {
+  border-bottom: none;
+}
+
+.delivery-item p,
+.inventory-item p {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+  padding: 15px;
+}
+
+@media (max-width: 1000px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebar {
+    width: 205px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar-subtitle {
+    margin-bottom: 15px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summary-cards {
+    gap: 10px;
+  }
+
+  .summary-card {
+    padding: 15px;
+  }
+
+  .summary-card h2 {
+    font-size: 26px;
+  }
+}
