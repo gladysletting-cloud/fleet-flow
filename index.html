@@ -7,108 +7,169 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="app">
-
     <aside class="sidebar">
       <h2>FleetFlow</h2>
-      <p class="sidebar-subtitle">Truck Operations</p>
 
       <nav>
-        <a href="#dashboard" class="active">Dashboard</a>
-        <a href="#orders">Customer Orders</a>
-        <a href="#inventory">Truck Inventory</a>
-        <a href="#allocation">Truck Allocation</a>
-        <a href="#deliveries">Delivery Schedule</a>
+        <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#orders">Customer Orders</a></li>
+          <li><a href="#inventory">Truck Inventory</a></li>
+          <li><a href="#allocation">Truck Allocation</a></li>
+          <li><a href="#deliveries">Delivery Monitoring</a></li>
+        </ul>
       </nav>
-
-      <div class="sidebar-footer">
-        Allocation & Delivery Management
-      </div>
     </aside>
 
     <main class="main-content">
 
-      <header class="topbar">
-        <div>
-          <h1 id="dashboard">Operations Dashboard</h1>
-          <p>Monitor truck allocation and delivery performance.</p>
-        </div>
-        <span class="user-label">Operations Team</span>
-      </header>
+      <section id="dashboard">
+        <h1>Operations Dashboard</h1>
+        <p>Monitor truck orders, allocations and deliveries.</p>
 
-      <section class="summary-cards">
-        <article class="summary-card">
-          <p>Total Orders</p>
-          <h2 id="total-orders">0</h2>
-        </article>
-
-        <article class="summary-card">
-          <p>Awaiting Allocation</p>
-          <h2 id="pending-orders">0</h2>
-        </article>
-
-        <article class="summary-card">
-          <p>Deliveries Due Soon</p>
-          <h2 id="due-orders">0</h2>
-        </article>
-
-        <article class="summary-card">
-          <p>Overdue Deliveries</p>
-          <h2 id="overdue-orders">0</h2>
-        </article>
-      </section>
-
-      <section class="panel" id="orders">
-        <div class="section-heading">
-          <div>
-            <h2>Customer Orders</h2>
-            <p>Review truck orders and their delivery progress.</p>
+        <div class="summary-cards">
+          <div class="card">
+            <h3>Total Orders</h3>
+            <p id="total-orders">0</p>
           </div>
-          <input
-            type="search"
-            id="search-input"
-            placeholder="Search customer or order..."
-          >
+
+          <div class="card">
+            <h3>Awaiting Allocation</h3>
+            <p id="pending-orders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Due Soon</h3>
+            <p id="due-orders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Overdue</h3>
+            <p id="overdue-orders">0</p>
+          </div>
         </div>
 
-        <div class="table-wrapper">
+        <div class="table-section">
+          <h2>Recent Orders</h2>
+
           <table>
             <thead>
               <tr>
-                <th>Order No.</th>
+                <th>Order ID</th>
                 <th>Customer</th>
-                <th>Truck</th>
-                <th>Source</th>
+                <th>Truck Model</th>
                 <th>Delivery Date</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody id="orders-table">
+              <tr>
+                <td colspan="5">Loading orders...</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="panel" id="deliveries">
-        <h2>Delivery Monitoring</h2>
-        <p>Keep track of scheduled and completed deliveries.</p>
-        <div id="delivery-list"></div>
+      <section id="orders">
+        <h1>Customer Orders</h1>
+        <p>View customer orders and their delivery requirements.</p>
+
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Truck Model</th>
+                <th>Delivery Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="customer-orders-table">
+              <tr>
+                <td colspan="5">Orders will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <section class="panel" id="inventory">
-        <h2>Truck Availability</h2>
-        <p>Monitor stock trucks and trucks being sourced or imported.</p>
-        <div id="inventory-summary"></div>
+      <section id="inventory">
+        <h1>Truck Inventory</h1>
+        <p>Monitor trucks available in company stock and sourced externally.</p>
+
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Truck ID</th>
+                <th>Truck Model</th>
+                <th>VIN / Stock Number</th>
+                <th>Source</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="trucks-table">
+              <tr>
+                <td colspan="5">Truck inventory will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <footer>
-        FleetFlow &copy; 2026 | Internal Operations System
-      </footer>
+      <section id="allocation">
+        <h1>Truck Allocation</h1>
+        <p>Track which truck is assigned to each customer order.</p>
+
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Assigned Truck</th>
+                <th>Driver / Transporter</th>
+                <th>Allocation Status</th>
+              </tr>
+            </thead>
+            <tbody id="allocation-table">
+              <tr>
+                <td colspan="5">Truck allocations will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="deliveries">
+        <h1>Delivery Monitoring</h1>
+        <p>Monitor delivery progress and identify late deliveries.</p>
+
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Delivery Date</th>
+                <th>Delivery Status</th>
+                <th>Delivery Progress</th>
+              </tr>
+            </thead>
+            <tbody id="deliveries-table">
+              <tr>
+                <td colspan="5">Delivery records will appear here.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
     </main>
   </div>
-
-  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
