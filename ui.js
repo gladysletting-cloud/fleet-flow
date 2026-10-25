@@ -105,7 +105,7 @@ export function displayTrucks(trucks) {
     </tr>
   `).join("");
 }
-export function displaayAllocations(orders){
+export function displayAllocations(orders){
   const table = document.getElementById("allocation-table");
   if (!table) return;
 

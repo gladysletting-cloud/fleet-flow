@@ -2,7 +2,9 @@ import { getOrders, getTrucks } from "./api.js";
 import {
   displaySummary,
   displayOrders,
-  displayTrucks
+  displayTrucks,
+  displayAllocations,
+  displayDeliveries
 } from "./ui.js";
 
 async function loadFleetFlow() {
@@ -18,6 +20,8 @@ async function loadFleetFlow() {
     displayOrders(orders, "customer-orders-table");
 
     displayTrucks(trucks);
+    displayAllocations(orders);
+    displayDeliveries(orders);
 
     console.log("FleetFlow data loaded successfully.");
   } catch (error) {

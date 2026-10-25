@@ -122,6 +122,36 @@
 
       <section id="allocation">
         <h1>Truck Allocation</h1>
+        <form id="allocation-form" class="allocation-form">
+          <div>
+            <label for="order-id">Order ID</label>
+            <input 
+            type="text"
+            id="order-id"
+            placeholder="Enter order ID"
+            required
+            >
+          </div>
+
+          <div>
+            <label for="truck-name">Truck</label>
+            <input
+             type="text"
+             id="truck-name"
+             placeholder="Enter truck model or VIN"
+             required
+             >
+          </div>
+          <div>
+            <label for="driver-name">Driver</label>
+            <input type="text"
+            id="driver"
+            placeholder="Enter Driver Name"
+            required
+            >
+          </div>
+          <button type="submit">Allocate Truck</button>
+        </form>
         <p>Track which truck is assigned to each customer order.</p>
 
         <div class="table-section">
