@@ -1,0 +1,40 @@
+{
+    "orders":[
+        {
+            "id": "1",
+            "customer": "Laura",
+            "truck": "FH Truck",
+            "deliveryDate": "2026-10-28",
+            "status": "Allocated"
+        },
+         {
+            "id": "2",
+            "customer":"Brian",
+            "truck": "FM Truck",
+            "deliveryDate":"2026-10-29",
+            "status": "Panding allocation"
+         },
+         {
+            "id":"3",
+            "customer":"Rashid",
+            "truck": "FV Truck",
+            "deliveryDate":"2026-10-24",
+            "status": "In Transit"
+         }
+    ],
+
+    "trucks":[
+        {
+            "id":"1",
+            "model": "FH Truck",
+            "vin": "VIN001",
+            "status": "Available"
+        },
+        {
+            "id":"2",
+            "model":"Fm Truck",
+            "vin":"VIN002",
+            "status": "Allocated"
+        }
+    ]
+}
