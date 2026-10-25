@@ -5,21 +5,27 @@
             "customer": "Laura",
             "truck": "FH Truck",
             "deliveryDate": "2026-10-28",
-            "status": "Allocated"
+            "status": "Allocated",
+            "driver": "John",
+            "deliveryProgress": "Awaiting Dispatch"
         },
          {
             "id": "2",
             "customer":"Brian",
             "truck": "FM Truck",
             "deliveryDate":"2026-10-29",
-            "status": "Panding allocation"
+            "status": "Panding allocation",
+            "driver":"Not Assigned",
+            "deliveryProgress":"Not Started"
          },
          {
             "id":"3",
             "customer":"Rashid",
             "truck": "FV Truck",
             "deliveryDate":"2026-10-24",
-            "status": "In Transit"
+            "status": "In Transit",
+            "driver":"Mary",
+            "deliveryProgress":"In Transit"
          }
     ],
 
@@ -28,12 +34,14 @@
             "id":"1",
             "model": "FH Truck",
             "vin": "VIN001",
+            "source": "Company Stock",
             "status": "Available"
         },
         {
             "id":"2",
             "model":"Fm Truck",
             "vin":"VIN002",
+            "source":"Imported",
             "status": "Allocated"
         }
     ]
