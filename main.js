@@ -1,16 +1,19 @@
 import { 
   getOrders, 
   getTrucks,
-  updateOrder 
+  updateOrder,
+  UpdateTruck
 } from "./api.js";
 import {
   displaySummary,
   displayOrders,
   displayTrucks,
+  displayTruckOptions,
   displayAllocations,
   displayDeliveries
 } from "./ui.js";
 
+let allTrucks =[];
 async function loadFleetFlow() {
   try {
     const [orders, trucks] = await Promise.all([
@@ -18,12 +21,15 @@ async function loadFleetFlow() {
       getTrucks()
     ]);
 
+    allTrucks = trucks;
+
     displaySummary(orders);
     displayOrders(orders, "orders-table");
 
     displayOrders(orders, "customer-orders-table");
 
     displayTrucks(trucks);
+    displayTruckOptions(trucks)
     displayAllocations(orders);
     displayDeliveries(orders);
 
@@ -53,16 +59,18 @@ allocationForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const orderId = document.getElementById("order-id").value.trim();
-  const truckName = document.getElementById("truck-name").value.trim();
+  const truckId = document.getElementById("truck-name").value;
   const driverName = document.getElementById("driver-name").value.trim();
+  const selectTruck = allTrucks.find(truck => truck.id === truckId);
 
   try {
     const updatedOrder = await updateOrder(orderId, {
-      truck: truckName,
+      truck: selectTruck.model,
       driver: driverName,
       status: "Allocated",
       deliveryProgress: "Awaiting Dispatch"
     });
+    await UpdateTruck(truckId, {status: "Allocated"});
 
     alert(`Truck successfully allocated to ${updatedOrder.customer}!`);
 

@@ -143,3 +143,14 @@ export function displayDeliveries(orders) {
       '<tr><td colspan="5">No deliveries found.</td></tr>';
   }
 }
+export function displayTruckOptions(trucks){
+  const select = document.getElementById("truck-name");
+
+  if(!select) return;
+
+  const availabletrucks = trucks.filter(truck => truck.status === "Available");
+
+  select.innerHTML = `<option value="">select an available truck</option>` + 
+  availabletrucks.map(truck =>`
+    <option value="${truck.id}">${truck.model} (${truck.vin})</option<`).join("");
+}
