@@ -1,4 +1,8 @@
-import { getOrders, getTrucks } from "./api.js";
+import { 
+  getOrders, 
+  getTrucks,
+  updateOrder 
+} from "./api.js";
 import {
   displaySummary,
   displayOrders,
@@ -33,7 +37,7 @@ async function loadFleetFlow() {
       table.innerHTML = `
         <tr>
           <td colspan="5">
-            Unable to load orders. Check that JSON Server is running.
+            Unable to load orders.
           </td>
         </tr>
       `;
@@ -42,3 +46,31 @@ async function loadFleetFlow() {
 }
 
 loadFleetFlow();
+
+const allocationForm = document.getElementById("allocation-form");
+
+allocationForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const orderId = document.getElementById("order-id").value.trim();
+  const truckName = document.getElementById("truck-name").value.trim();
+  const driverName = document.getElementById("driver-name").value.trim();
+
+  try {
+    const updatedOrder = await updateOrder(orderId, {
+      truck: truckName,
+      driver: driverName,
+      status: "Allocated",
+      deliveryProgress: "Awaiting Dispatch"
+    });
+
+    alert(`Truck successfully allocated to ${updatedOrder.customer}!`);
+
+    allocationForm.reset();
+
+    await loadFleetFlow();
+  } catch (error) {
+    console.error("Allocation error:", error);
+    alert("Allocation failed. Check the Order ID and make sure JSON Server is running.");
+  }
+});
