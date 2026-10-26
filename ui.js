@@ -109,7 +109,7 @@ export function displayAllocations(orders){
   const table = document.getElementById("allocation-table");
   if (!table) return;
 
-  table.innerHTML= order.map(order => `
+  table.innerHTML= orders.map(order => `
     <tr>
      <td>${order.id}</td>
      <td>${order.customer}</td>
@@ -118,7 +118,7 @@ export function displayAllocations(orders){
      <td>${order.status}</td>
     </td>
     `).join("");
-    if(order.length == 0){
+    if(orders.length == 0){
       table.innerHTML = 
       '<tr><td colspan="5">No allocations found.</td></tr>';
     }

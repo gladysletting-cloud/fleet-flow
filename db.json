@@ -39,7 +39,7 @@
         },
         {
             "id":"2",
-            "model":"Fm Truck",
+            "model":"FM Truck",
             "vin":"VIN002",
             "source":"Imported",
             "status": "Allocated"
