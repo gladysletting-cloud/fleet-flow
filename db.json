@@ -1,48 +1,48 @@
 {
-    "orders":[
-        {
-            "id": "1",
-            "customer": "Laura",
+  "orders": [
+    {
+      "id": "1",
+      "customer": "Laura",
             "truck": "FH Truck",
-            "deliveryDate": "2026-10-28",
-            "status": "Allocated",
+      "deliveryDate": "2026-10-28",
+      "status": "Allocated",
             "driver": "John",
-            "deliveryProgress": "Awaiting Dispatch"
-        },
-         {
-            "id": "2",
-            "customer":"Brian",
-            "truck": "FM Truck",
-            "deliveryDate":"2026-10-29",
-            "status": "Panding allocation",
-            "driver":"Not Assigned",
-            "deliveryProgress":"Not Started"
-         },
-         {
-            "id":"3",
-            "customer":"Rashid",
-            "truck": "FV Truck",
-            "deliveryDate":"2026-10-24",
-            "status": "In Transit",
-            "driver":"Mary",
-            "deliveryProgress":"In Transit"
-         }
-    ],
-
-    "trucks":[
-        {
-            "id":"1",
-            "model": "FH Truck",
-            "vin": "VIN001",
-            "source": "Company Stock",
-            "status": "Available"
-        },
-        {
-            "id":"2",
-            "model":"FM Truck",
-            "vin":"VIN002",
-            "source":"Imported",
-            "status": "Allocated"
-        }
-    ]
+      "deliveryProgress": "Awaiting Dispatch"
+    },
+    {
+      "id": "2",
+      "customer": "Brian",
+      "truck": "FM Tuck",
+      "deliveryDate": "2026-10-29",
+      "status": "Allocated",
+      "driver": "James",
+      "deliveryProgress": "Awaiting Dispatch"
+    },
+    {
+      "id": "3",
+      "customer": "Rashid",
+      "truck": "FV Truck",
+      "deliveryDate": "2026-10-24",
+      "status": "In Transit",
+      "driver": "Mary",
+      "deliveryProgress": "In Transit"
+    }
+  ],
+  "trucks": [
+    {
+      "id": "1",
+      "model": "FH Truck",
+      "vin": "VIN001",
+      "source": "Company Stock",
+      "status": "Available"
+    },
+    {
+      "id": "2",
+      "model": "FM Truck",
+      "vin": "VIN002",
+      "source": "Imported",
+      "status": "Allocated"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

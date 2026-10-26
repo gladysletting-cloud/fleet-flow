@@ -48,6 +48,20 @@ export async function updateOrder(id, updates) {
 
   return await response.json();
 }
+export async function UpdateTruck(id, updates) {
+  const response = await fetch(`${API_URL}/trucks/${id}`,{
+    method: 'PATCH',
+    headers:{
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(updates)
+  });
+  if (!response.ok){
+    throw new Error("could not update the truck");
+  }
+  return await response.json()
+  
+}
 export async function deleteOrder(id) {
   const response = await fetch(`${API_URL}/orders/${id}`, {
     method: "DELETE"
