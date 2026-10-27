@@ -148,9 +148,12 @@ export function displayTruckOptions(trucks){
 
   if(!select) return;
 
-  const availabletrucks = trucks.filter(truck => truck.status === "Available");
+  const availableTrucks = trucks.filter(truck => truck.status === "Available");
 
-  select.innerHTML = `<option value="">select an available truck</option>` + 
-  availabletrucks.map(truck =>`
-    <option value="${truck.id}">${truck.model} (${truck.vin})</option<`).join("");
+  const options = availableTrucks.map(truck => {
+    return `<option value="${truck.id}">${truck.model} (${truck.vin})</option>`;
+  })
+
+  select.innerHTML = `<option value="">select an available truck</option>` + options.join("");
+   
 }
