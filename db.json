@@ -32,6 +32,7 @@
         "customer": "Amina",
         "deliveryDate": "2026-10-30",
         "truck": "FH Truck",
+        "status": "Allocated",
         "driver": "James",
         "deliveryProgress": "Awaiting Dispatch"
       },
