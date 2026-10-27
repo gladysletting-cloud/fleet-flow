@@ -1,56 +1,103 @@
-{
-  "orders": [
-    {
-      "id": "1",
-      "customer": "Laura",
-      "truck": "FH Truck",
-      "deliveryDate": "2026-10-28",
-      "status": "Allocated",
-      "driver": "John",
-      "deliveryProgress": "Awaiting Dispatch"
-    },
-    {
-      "id": "2",
-      "customer": "Brian",
-      "truck": "FM Tuck",
-      "deliveryDate": "2026-10-29",
-      "status": "Allocated",
-      "driver": "James",
-      "deliveryProgress": "Awaiting Dispatch"
-    },
-    {
-      "id": "3",
-      "customer": "Rashid",
-      "truck": "FV Truck",
-      "deliveryDate": "2026-10-24",
-      "status": "In Transit",
-      "driver": "Mary",
-      "deliveryProgress": "In Transit"
-    },
-    {
-      "id": "4",
+  {
+    "orders": [
+      {
+        "id": "1",
+        "customer": "Laura",
+        "truck": "FH Truck",
+        "deliveryDate": "2026-10-28",
+        "status": "Allocated",
+        "driver": "John",
+        "deliveryProgress": "Awaiting Dispatch"
+      },
+      {
+        "id": "2",
+        "customer": "Brian",
+        "truck": "FM Truck",
+        "deliveryDate": "2026-10-29",
+        "status": "Allocated",
+        "driver": "James",
+        "deliveryProgress": "Awaiting Dispatch"
+      },
+      {
+        "id": "3",
+        "customer": "Rashid",
+        "truck": "FV Truck",
+        "deliveryDate": "2026-10-24",
+        "status": "In Transit",
+        "driver": "Mary",
+        "deliveryProgress": "In Transit"
+      },
+      {
+        "id": "4",
+        "customer": "Amina",
+        "deliveryDate": "2026-10-30",
+        "truck": "FH Truck",
+        "driver": "James",
+        "deliveryProgress": "Awaiting Dispatch"
+      },
+        {
+      "id": "5",
       "customer": "Amina",
+      "truck": "",
       "deliveryDate": "2026-10-30",
-      "status": "Allocated",
-      "truck": "FH Truck",
-      "driver": "James",
-      "deliveryProgress": "Awaiting Dispatch"
-    }
-  ],
-  "trucks": [
-    {
-      "id": "1",
-      "model": "FH Truck",
-      "vin": "VIN001",
-      "source": "Company Stock",
-      "status": "Allocated"
+      "status": "Pending",
+      "driver": "",
+      "deliveryProgress": "Not Dispatched"
     },
     {
-      "id": "2",
-      "model": "FM Truck",
-      "vin": "VIN002",
-      "source": "Imported",
-      "status": "Allocated"
+      "id": "6",
+      "customer": "David",
+      "truck": "",
+      "deliveryDate": "2026-11-02",
+      "status": "Pending",
+      "driver": "",
+      "deliveryProgress": "Not Dispatched"
+    },
+    {
+      "id": "7",
+      "customer": "Grace",
+      "truck": "",
+      "deliveryDate": "2026-11-03",
+      "status": "Pending",
+      "driver": "",
+      "deliveryProgress": "Not Dispatched"
     }
-  ]
-}
+    ],
+    "trucks": [
+      {
+        "id": "1",
+        "model": "FH Truck",
+        "vin": "VIN001",
+        "source": "Company Stock",
+        "status": "Allocated"
+      },
+      {
+        "id": "2",
+        "model": "FM Truck",
+        "vin": "VIN002",
+        "source": "Imported",
+        "status": "Allocated"
+      },
+       {
+      "id": "3",
+      "model": "FMX Truck",
+      "vin": "VIN003",
+      "source": "Company Stock",
+      "status": "Available"
+      },
+      {
+        "id": "4",
+        "model": "FE Truck",
+        "vin": "VIN004",
+        "source": "Imported",
+        "status": "Available"
+      },
+      {
+        "id": "5",
+        "model": "FL Truck",
+        "vin": "VIN005",
+        "source": "Company Stock",
+        "status": "Available"
+      }
+    ]
+  }
